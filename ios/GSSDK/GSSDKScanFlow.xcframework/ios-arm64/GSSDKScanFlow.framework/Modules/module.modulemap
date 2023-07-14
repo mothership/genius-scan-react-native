@@ -1,0 +1,11 @@
+framework module GSSDKScanFlow {
+  umbrella header "GSSDKScanFlow.h"
+
+  export *
+  module * { export * }
+}
+
+module GSSDKScanFlow.Swift {
+  header "GSSDKScanFlow-Swift.h"
+  requires objc
+}

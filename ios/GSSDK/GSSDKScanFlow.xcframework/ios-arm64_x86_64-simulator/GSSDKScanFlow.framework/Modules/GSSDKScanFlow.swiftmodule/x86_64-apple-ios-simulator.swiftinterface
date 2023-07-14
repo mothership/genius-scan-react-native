@@ -1,0 +1,167 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.8.1 (swiftlang-5.8.0.124.5 clang-1403.0.22.11.100)
+// swift-module-flags: -target x86_64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name GSSDKScanFlow
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import Foundation
+import GSSDKOCR
+@_exported import GSSDKScanFlow
+import QuartzCore
+import Swift
+import SwiftUI
+import UIKit
+import _Concurrency
+import _StringProcessing
+public enum GSSDKScanFlowAsset {
+  public static let artboardExpand: GSSDKScanFlow.GSSDKScanFlowImages
+  public static let chargingFlashSync: GSSDKScanFlow.GSSDKScanFlowImages
+  public static let flash1: GSSDKScanFlow.GSSDKScanFlowImages
+  public static let flashOff: GSSDKScanFlow.GSSDKScanFlowImages
+  public static let perspectiveGrid: GSSDKScanFlow.GSSDKScanFlowImages
+  public static let retouchLandscape: GSSDKScanFlow.GSSDKScanFlowImages
+  public static let rotateBack: GSSDKScanFlow.GSSDKScanFlowImages
+  public static let straightenedPerspectiveGrid: GSSDKScanFlow.GSSDKScanFlowImages
+}
+public struct GSSDKScanFlowImages {
+  public var name: Swift.String {
+    get
+  }
+  public typealias Image = UIKit.UIImage
+  public var image: GSSDKScanFlow.GSSDKScanFlowImages.Image {
+    get
+  }
+  @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+  public var swiftUIImage: SwiftUI.Image {
+    get
+  }
+}
+extension UIKit.UIImage {
+  @available(macOS, deprecated, message: "This initializer is unsafe on macOS, please use the GSSDKScanFlowImages.image property")
+  convenience public init?(asset: GSSDKScanFlow.GSSDKScanFlowImages)
+}
+@available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+extension SwiftUI.Image {
+  public init(asset: GSSDKScanFlow.GSSDKScanFlowImages)
+  public init(asset: GSSDKScanFlow.GSSDKScanFlowImages, label: SwiftUI.Text)
+  public init(decorative asset: GSSDKScanFlow.GSSDKScanFlowImages)
+}
+@_inheritsConvenienceInitializers @objc public class GSSDKScanFlowResources : ObjectiveC.NSObject {
+  @objc public class var bundle: Foundation.Bundle {
+    @objc get
+  }
+  @objc override dynamic public init()
+  @objc deinit
+}
+public enum GSSDKScanFlowStrings {
+  public enum Gssdk {
+    public static let gssdkSettings: Swift.String
+    public enum Action {
+      public static let back: Swift.String
+      public static let cancel: Swift.String
+      public static let capture: Swift.String
+      public static let changeFilter: Swift.String
+      public static let crop: Swift.String
+      public static let discard: Swift.String
+      public static let done: Swift.String
+      public static let next: Swift.String
+      public static let retry: Swift.String
+      public static let rotateLeft: Swift.String
+    }
+    public enum Crop {
+      public static let detect: Swift.String
+      public static let maximize: Swift.String
+    }
+    public enum Error {
+      public static func cameraPermissionDeniedMessage(_ p1: Any) -> Swift.String
+      public static func cameraPermissionDeniedTitle(_ p1: Any) -> Swift.String
+    }
+    public enum Filter {
+      public static let blackAndWhite: Swift.String
+      public static let color: Swift.String
+      public static let instructions: Swift.String
+      public static let monochrome: Swift.String
+      public static let none: Swift.String
+      public static let photo: Swift.String
+    }
+    public enum Flash {
+      public static let mode: Swift.String
+      public enum Mode {
+        public static let auto: Swift.String
+        public static let off: Swift.String
+        public static let on: Swift.String
+      }
+    }
+    public enum Flow {
+      public static let addPage: Swift.String
+      public static let addPages: Swift.String
+      public static let cancel: Swift.String
+      public static func confirmCancellation(_ p1: Swift.Int) -> Swift.String
+      public static func done(_ p1: Swift.Int) -> Swift.String
+      public enum ConfirmCancellation {
+        public static let keepScanning: Swift.String
+      }
+      public enum Progress {
+        public static let generatingDocument: Swift.String
+        public static let recognizingText: Swift.String
+      }
+    }
+    public enum UserGuidance {
+      public static let documentFound: Swift.String
+      public static let searching: Swift.String
+    }
+  }
+  public enum Localizable {
+    public static let gssdkSettings: Swift.String
+  }
+}
+@_inheritsConvenienceInitializers @objc final public class GSKUIBackgroundProcessing : ObjectiveC.NSObject {
+  @objc public static let shared: GSSDKScanFlow.GSKUIBackgroundProcessing
+  @objc final public let documentGenerationQueue: Dispatch.DispatchQueue
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc final public class GSKUIOCRService : ObjectiveC.NSObject {
+  @objc public static let shared: GSSDKScanFlow.GSKUIOCRService
+  @objc final public var pendingCount: Swift.Int {
+    get
+  }
+  @objc final public func process(_ scan: GSSDKScanFlow.GSKScanFlowScan, configuration: GSSDKOCR.GSKOCRConfiguration)
+  @objc final public func waitForCompletion(_ onDone: @escaping () -> Swift.Void)
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc @_Concurrency.MainActor(unsafe) public class BVImageContentViewObjCWrapperView : UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @objc @_Concurrency.MainActor(unsafe) public func setImage(_ image: UIKit.UIImage)
+  @objc @_Concurrency.MainActor(unsafe) public func setZoomLimits()
+  @objc deinit
+}
+@_Concurrency.MainActor(unsafe) open class BVContentScrollView<ContentViewType> : UIKit.UIScrollView, UIKit.UIScrollViewDelegate where ContentViewType : UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) final public let contentView: ContentViewType
+  @_Concurrency.MainActor(unsafe) public var doubleTapRecognizer: UIKit.UITapGestureRecognizer! {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public init(frame: CoreFoundation.CGRect, contentView: ContentViewType)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) public var availableSize: CoreFoundation.CGSize {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public var padding: CoreFoundation.CGFloat
+  @_Concurrency.MainActor(unsafe) open var contentViewContentSize: CoreFoundation.CGSize {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public var contentInset: UIKit.UIEdgeInsets {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public var bounds: CoreFoundation.CGRect {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func layoutSubviews()
+  @_Concurrency.MainActor(unsafe) public func setZoomLimits()
+  @objc @_Concurrency.MainActor(unsafe) open func handleDoubleTap(_ gestureRecognizer: UIKit.UITapGestureRecognizer)
+  @_Concurrency.MainActor(unsafe) @objc public func viewForZooming(in scrollView: UIKit.UIScrollView) -> UIKit.UIView?
+  @_Concurrency.MainActor(unsafe) @objc public func scrollViewDidEndZooming(_ scrollView: UIKit.UIScrollView, with view: UIKit.UIView?, atScale scale: CoreFoundation.CGFloat)
+  @_Concurrency.MainActor(unsafe) @objc open func scrollViewDidZoom(_ scrollView: UIKit.UIScrollView)
+  @objc deinit
+}

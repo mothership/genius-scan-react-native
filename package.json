@@ -1,0 +1,40 @@
+{
+  "name": "@thegrizzlylabs/react-native-genius-scan",
+  "version": "4.12.0",
+  "description": "React Native Plugin for Genius Scan SDK",
+  "author": "TheGrizzlyLabs <sdk@thegrizzlylabs.com> (https://www.thegrizzlylabs.com/)",
+  "homepage": "https://geniusscansdk.com",
+  "main": "index.js",
+  "keywords": [
+    "document scanner",
+    "document scanning",
+    "sdk",
+    "scanning api",
+    "camera",
+    "scanner",
+    "mobile scanner",
+    "ocr",
+    "optical character recognition",
+    "text recognition",
+    "react-native",
+    "react-component",
+    "ios",
+    "android",
+    "opencv",
+    "document capture",
+    "document detection",
+    "edge detection",
+    "perspective correction",
+    "image cropping",
+    "image enhancement",
+    "image filter",
+    "black and white",
+    "image to pdf",
+    "pdf generator",
+    "genius scan",
+    "the grizzly labs"
+  ],
+  "peerDependencies": {
+    "react-native": ">=0.41.2"
+  }
+}
