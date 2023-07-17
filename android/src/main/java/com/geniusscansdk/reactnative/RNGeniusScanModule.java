@@ -1,4 +1,3 @@
-
 package com.geniusscansdk.reactnative;
 
 import android.app.Activity;
