@@ -36,6 +36,9 @@ public class RNGeniusScanModule extends ReactContextBaseJavaModule {
 
   // We don't work directly with Promise here as it is a React Native Bridge module
   private void resolvePromiseWithPromiseResult(Promise promise, PromiseResult promiseResult) {
+    if (promise == null) {
+      return;
+    }
     if (promiseResult.isError) {
       promise.reject(promiseResult.errorCode, promiseResult.errorMessage);
     } else if (promiseResult.result == null) {
